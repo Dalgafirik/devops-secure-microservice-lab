@@ -1,9 +1,12 @@
 services:
-  web:
-    build: ./service
-    container_name: devops_web
+  pizza-backend:
+    build: ./backend/pizza-service
+    container_name: pizza_backend
     ports:
-      - "5000:5000"
-    env_file:
-      - .env
+      - "8080:8080"
     restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 10s
+      timeout: 2s
+      retries: 3
