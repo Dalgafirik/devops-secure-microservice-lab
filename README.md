@@ -51,7 +51,7 @@ devops-secure-microservice-lab/
 ├── docker-compose.yml        # Multi-container orchestration
 ├── README.md                 # Project documentation
 └── service/                  # Legacy Flask service (retired)
-
+```
 
 ---
 
@@ -61,11 +61,12 @@ Build and start the services:
 
 ```bash
 docker compose up -d --build
-
+```
 Check service health:
 
+```bash
 curl http://localhost:8080/health
-
+```
 ---
 ##Notes
 
