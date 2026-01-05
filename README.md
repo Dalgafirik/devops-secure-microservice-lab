@@ -40,32 +40,34 @@ service health, and operational readiness rather than business complexity.
 
 ## Project Structure
 
+
+```text
 devops-secure-microservice-lab/
 ├── backend/
-│ └── pizza-service/
-│ ├── Dockerfile
-│ ├── pom.xml
-│ └── src/
-├── docker-compose.yml
-├── README.md
-└── service/ # legacy Flask service (retired)
+│   └── pizza-service/
+│       ├── Dockerfile        # Container definition for the service
+│       ├── pom.xml           # Maven configuration
+│       └── src/              # Application source code
+├── docker-compose.yml        # Multi-container orchestration
+├── README.md                 # Project documentation
+└── service/                  # Legacy Flask service (retired)
 
 
 ---
 
 ## Running Locally
 
+Build and start the services:
+
 ```bash
 docker compose up -d --build
-
 
 Check service health:
 
 curl http://localhost:8080/health
 
-
-
-Notes
+---
+##Notes
 
 This project prioritizes DevOps practices such as container lifecycle management,
 health monitoring, and controlled service evolution over application feature completeness.
